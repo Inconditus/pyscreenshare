@@ -1,8 +1,40 @@
+#setup repo
 cd ~/git
 git clone git@github.com:jcitme/$repo_name$.git
+
+
+
+
 cd $repo_name$
+
+#add files to git
 git add .
 
+#commit to local
 git commit .
-git push
+
+#sync to server
+git push origin master
+
+#sync from server
+git pull
+
+
+
+
+
+#to create branch
+git checkout -b $branch_name$
+
+#to return to branch
+git checkout $branch_name$
+
+#push to branch
+git push origin $branch_name$
+
+#which branch am i in?
+git branch
+
+#push to remote branch
+git push origin $branch_name$:remote
 
