@@ -42,6 +42,16 @@ git push origin $branch_name$:remote
 git pull origin
 git merge master
 
+#merge stuff into master
+git checkout master
+git merge $branch_name$
+
+#delete used branch
+git branch -d $branch_name$
+
+#delete remote branch
+git push origin :$branch_name$
+
 
 
 end file
