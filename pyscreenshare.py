@@ -57,8 +57,7 @@ import pycurl
 
 #beep sound
 def beep():
-    sys.stdout.write('\a')
-    sys.stdout.flush()
+    print "\a"
 
 #save and load gtk pixbuffs
 def get_encoded_buffer_from_pixbuf(pixbuf): 
@@ -131,15 +130,18 @@ def up_imgur(imgdata):
 	    error = "Problem uploading anonymously."
     if error == "Problem uploading anonymously.":
         return error
-    else: return imageURL 
-    beep()
+    else: 
+    	beep()
+    	return imageURL 
+    
 #for local images
 def up_local(imgdata):
     format = 'png'
     screenshot_name = 'Snapshot_' + time.strftime('%Y_%m_%d_%H_%M_%S')
     imgdata.save(screenshot_name + format, format)
-    return "locally saved"
     beep()
+    return "locally saved"
+    
 #for local basic dropbox integration
 def up_bdropbox(imgdata):
     format = 'png'
@@ -148,8 +150,9 @@ def up_bdropbox(imgdata):
     im = pixbuf2Image(imgdata)
     im.save(db_saveloc + screenshot_name + format, "PNG")#,quality=80
     #imgdata.save(screenshot_name + format, format)
-    return "http://dl.dropbox.com/u/" + db_uid + "/Snapshots/" + screenshot_name + format
     beep()
+    return "http://dl.dropbox.com/u/" + db_uid + "/Snapshots/" + screenshot_name + format
+    
     
 #upload string to pastebin
 def up_pastebin(stingdat):
@@ -161,8 +164,9 @@ def up_pastebin(stingdat):
         "paste_expire_date":"N",#10M", ###('N', '10M', '1H', '1D', '1M')
         "paste_format":"text"}
     full_url = urlopen(url,urlencode(args)).read()
-    return "http://pastebin.com/raw.php?i=" + full_url[20:]
     beep()
+    return "http://pastebin.com/raw.php?i=" + full_url[20:]
+    
 
 #upload changer
 def upload(imgdata):
