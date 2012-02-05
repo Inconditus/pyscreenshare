@@ -1,0 +1,34 @@
+
+** (pyscreenshare.py:5194): WARNING **: Binding '<Shift><Ctrl>F2' failed!
+
+** (pyscreenshare.py:5194): WARNING **: Binding '<Shift><Ctrl>F3' failed!
+
+** (pyscreenshare.py:5194): WARNING **: Binding '<Shift><Ctrl>F4' failed!
+
+** (pyscreenshare.py:5194): WARNING **: Binding '<Shift><Ctrl>F5' failed!
+
+** (pyscreenshare.py:5194): WARNING **: Binding '<Shift><Ctrl>F6' failed!
+
+** (pyscreenshare.py:5194): WARNING **: Binding '<Alt><Ctrl>P' failed!
+Press <Alt><Ctrl>P to quit
+<Shift><Ctrl>F2 screencap
+<Shift><Ctrl>F3 windowcap (some bugs, notably google chrome)
+<Shift><Ctrl>F4 areacap (not implemented)
+<Shift><Ctrl>F5 upload clipboard
+<Shift><Ctrl>F6 upload file (not implemented)
+Traceback (most recent call last):
+  File "pyscreenshare.py", line 289, in <module>
+    gtk.main()
+KeyboardInterrupt
+
+** (pyscreenshare.py:5209): WARNING **: Binding '<Shift><Ctrl>F2' failed!
+
+** (pyscreenshare.py:5209): WARNING **: Binding '<Shift><Ctrl>F3' failed!
+
+** (pyscreenshare.py:5209): WARNING **: Binding '<Shift><Ctrl>F4' failed!
+
+** (pyscreenshare.py:5209): WARNING **: Binding '<Shift><Ctrl>F5' failed!
+
+** (pyscreenshare.py:5209): WARNING **: Binding '<Shift><Ctrl>F6' failed!
+
+** (pyscreenshare.py:5209): WARNING **: Binding '<Alt><Ctrl>P' failed!

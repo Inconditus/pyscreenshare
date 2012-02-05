@@ -1,0 +1,32 @@
+#Import needed libs
+import os
+import sys
+import time
+import wx
+#print tempfile.gettempdir() prints current temp dir
+#import tempfile
+
+#install gtk+ and python-keybinder
+import pygtk
+pygtk.require('2.0')
+import gtk
+import gc
+import keybinder
+
+#install pycurl
+import pycurl
+import cStringIO
+import StringIO
+import base64
+from xml.dom import minidom
+
+
+def copyclip():
+    clipboard = gtk.clipboard_get()
+    text = clipboard.wait_for_text()
+    image = clipboard.wait_for_image()
+    clipboard.store()
+    return text, image
+    
+ret = copyclip()
+print ret
