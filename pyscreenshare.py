@@ -2,7 +2,7 @@
 #based on https://github.com/engla/keybinder
 
 #run:
-#nohup python pyscreenshare.py
+#nohup python pyscreenshare.py &
 #in the terminal, then close the terminal, for background use. 
 #HOWEVER, remember to disable the raw_input for dropbox variables doen there V
 
@@ -54,6 +54,11 @@ import pycurl
 #sudo aptitude install python-imaging python-wxversion python-gtk2 python-keybinder python-pycurl
 
 
+
+#beep sound
+def beep():
+    sys.stdout.write('\a')
+    sys.stdout.flush()
 
 #save and load gtk pixbuffs
 def get_encoded_buffer_from_pixbuf(pixbuf): 
@@ -127,12 +132,14 @@ def up_imgur(imgdata):
     if error == "Problem uploading anonymously.":
         return error
     else: return imageURL 
+    beep()
 #for local images
 def up_local(imgdata):
     format = 'png'
     screenshot_name = 'Snapshot_' + time.strftime('%Y_%m_%d_%H_%M_%S')
     imgdata.save(screenshot_name + format, format)
     return "locally saved"
+    beep()
 #for local basic dropbox integration
 def up_bdropbox(imgdata):
     format = 'png'
@@ -142,6 +149,7 @@ def up_bdropbox(imgdata):
     im.save(db_saveloc + screenshot_name + format, "PNG")#,quality=80
     #imgdata.save(screenshot_name + format, format)
     return "http://dl.dropbox.com/u/" + db_uid + "/Snapshots/" + screenshot_name + format
+    beep()
     
 #upload string to pastebin
 def up_pastebin(stingdat):
@@ -154,6 +162,7 @@ def up_pastebin(stingdat):
         "paste_format":"text"}
     full_url = urlopen(url,urlencode(args)).read()
     return "http://pastebin.com/raw.php?i=" + full_url[20:]
+    beep()
 
 #upload changer
 def upload(imgdata):
